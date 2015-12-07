@@ -1,0 +1,11 @@
+.modal(ng-class='{show: active}') 
+  .background
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title {{title}}
+      .modal-body
+        {{message}}
+      .modal-footer
+        button.btn.btn-flat(ng-click='cancel()') {{ 'common.cancel' | translate }}
+        button.btn.btn-flat.btn-material-blue-A200(ng-click='confirm()') {{ 'common.confirm' | translate }}

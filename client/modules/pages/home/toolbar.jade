@@ -1,0 +1,11 @@
+button.btn.btn-fab.btn-raised(ng-click='toggleMeasure()', ng-class='{"btn-material-blue-A400": introduction.step != 2, "btn-material-grey-700": introduction.step == 2, "btn-material-blue-A400": currentTool != 0, "btn-material-blue-900": currentTool == 0}', title='{{ "tools.measure" | translate }}') {{ introductionStep }}
+  i.mdi.mdi-ruler
+button.btn.btn-fab.btn-raised(ng-click='toggleHighres()', ng-class='{"btn-material-blue-A400": introduction.step != 3, "btn-material-grey-700": introduction.step == 3, "btn-material-blue-A400": currentTool != 1, "btn-material-blue-900": currentTool == 1}')
+  i.mdi.mdi-quality-high
+button.btn.btn-fab.btn-raised(ng-click='toggleClimates()', title='{{ "tools.climate" | translate }}', ng-class='{"btn-material-grey-700": introduction.step == 4, "btn-material-blue-A400": currentTool != 2, "btn-material-blue-900": currentTool == 2}')
+  i.mdi.mdi-weather-partlycloudy(ng-hide='climateLoadingState == 1')
+  i.mdi.mdi-sync(ng-show='climateLoadingState == 1')
+button.btn.btn-fab.btn-raised.btn-material-blue-A400(ng-click='showIntroduction()', title='{{ "tools.help" | translate }}' ng-class='{"btn-material-blue-A400": currentTool != 3, "btn-material-blue-900": currentTool == 3}')
+  i.mdi.mdi-help
+#measureBox.popover(ng-show='measure.data')
+  .popover-content {{ measure.data }}

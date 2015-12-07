@@ -1,0 +1,18 @@
+angular.module('oxelie.map', [
+  // libraries
+  'ui.router',
+  'pascalprecht.translate',
+  'flock.bootstrap.material',
+  'angularMoment',
+  'leaflet-directive',
+  'mgcrea.ngStrap',
+  'ngSanitize',
+  // common modules
+  'oxelie.map.i18n',
+  'oxelie.map.storage',
+  'oxelie.map.assets',
+  // base application modules
+  'oxelie.map.routes'
+  // other application modules are automatically discovered
+  // clear the cache (restart or delete cache directory) when adding a new module
+].concat(<%- JSON.stringify(listClientModules('', 'oxelie.map')) %>));

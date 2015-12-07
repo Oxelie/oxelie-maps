@@ -1,0 +1,6 @@
+map(item='item', show-climate='showClimate', climate-loading-state='climateLoadingState', measure='measure')
+search(ng-hide='interfaceDisabled', ng-include='"/modules/pages/home/search.html"')
+toolbar(ng-hide='interfaceDisabled', ng-include='"/modules/pages/home/toolbar.html"')
+highres(ng-show='currentTool == 1', ng-include='"/modules/pages/home/highres.html"')
+climate(ng-show='climateIsVisible', ng-include='"/modules/pages/home/climate.html"')
+introduction(ng-include='"/modules/pages/home/introduction.html"')

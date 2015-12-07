@@ -1,0 +1,4 @@
+input.shadow-z-1(ng-click='closeIntroduction()', ng-class='{highlight: introduction.step == 1}', auto-focus='autofocus', placeholder='{{ "map.search" | translate }}', data-delay='{show: 1000}', data-html='1', data-template='/modules/pages/home/typeahead.html', data-auto-select=true data-min-length='3' ng-model='data.searchItem' bs-options='item as item.label for item in search($viewValue)', bs-typeahead='')
+i.mdi.mdi-close-circle(ng-show='item', ng-click='clearItem()')
+informations(category='item.category', wiki='item.wiki', data='item.informations', on-click='getInformations')
+images-box(files='item.informations.files')

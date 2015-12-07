@@ -1,0 +1,23 @@
+ul.typeahead.dropdown-menu(tabindex='-1', ng-show='$isVisible()', role='select')
+  li(role='presentation' ng-repeat='match in $matches' ng-class='{active: $index == $activeIndex}')
+    a(role='menuitem' tabindex='-1' ng-click='$select($index, $event)')
+      i.mdi.mdi-human(ng-show='match.value.category == 1')
+      i.mdi.mdi-city(ng-show='match.value.category == 2')
+      i.mdi.mdi-water(ng-show='match.value.category == 4')
+      i.mdi.mdi-image-filter-hdr(ng-show='match.value.category == 5')
+      i.mdi.mdi-water(ng-show='match.value.category == 6')
+      i.mdi.mdi-flag(ng-show='match.value.category == 7')
+      i.mdi.mdi-earth(ng-show='match.value.category == 8')
+      i.mdi.mdi-home-variant(ng-show='match.value.category == 9')
+      i.mdi.mdi-pine-tree(ng-show='match.value.category == 10')
+      i.mdi.mdi-bank(ng-show='match.value.category == 11')
+      i.mdi.mdi-map-marker(ng-show='match.value.category == 12')
+      i.mdi.mdi-weather-sunny(ng-show='match.value.category == 13')
+      i.mdi.mdi-map-marker(ng-show='match.value.category == 14')
+      i.mdi.mdi-water(ng-show='match.value.category == 15')
+      i.mdi.mdi-car(ng-show='match.value.category == 16')
+      i.mdi.mdi-map-marker(ng-show='match.value.category == 19')
+      i.mdi.mdi-shopping(ng-show='match.value.category == 20')
+      span {{ match.label }}
+      address {{ match.value.address.join(', ') }}
+      

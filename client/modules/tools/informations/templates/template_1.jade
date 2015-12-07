@@ -1,0 +1,53 @@
+table
+  tr(ng-if='data.naissance')
+    td {{ 'informations.dates' | translate }}
+    td
+      span(ng-if='data.naissance') {{ data.naissance }}
+      span(ng-if='data.naissance && data.mort') -
+      span(ng-if='data.mort') {{data.mort }}
+      span(ng-if='data.age')  ({{ data.age }} {{ 'informations.years' | translate }})
+  tr(ng-if='data.nationalite')
+    td {{ 'informations.nationality' | translate }}
+    td {{ data.nationalite }}
+  tr(ng-if='data.address')
+    td {{ 'informations.home' | translate }}
+    td
+      span(ng-repeat='item in data.address')
+        a(ng-click='onClick(item.id)') {{ item.name }}
+        span(ng-if='!$last') , 
+  tr(ng-if='data.mother_of_i[0]')
+    td {{ 'informations.mother' | translate }}
+    td
+      a(ng-click='onClick(data.mother_of_i[0].id)') {{ data.mother_of_i[0].name }}
+  tr(ng-if='data.father_of_i')
+    td {{ 'informations.father' | translate }}
+    td
+      a(ng-click='onClick(data.father_of_i[0].id)') {{ data.father_of_i[0].name }}
+  tr(ng-if='data.spouse')
+    td {{ 'informations.spouse' | translate }}
+    td {{ data.spouse }}
+  tr(ng-if='data.mother_of')
+    td {{ 'informations.children' | translate }}
+    td {{ data.mother_of }} {{ data.father_of }}
+  tr(ng-if='data.titre')
+    td {{ 'informations.title' | translate }}
+    td {{ data.titre }}
+  tr(ng-if='data.metier || data.fonction')
+    td {{ 'informations.occupation' | translate }}
+    td {{ data.metier}} ({{ data.fonction }})
+  tr(ng-if='data.work_for')
+    td {{ 'informations.work_for' | translate }}
+    td
+      a(ng-click='onClick(data.work_for[0].id)') {{ data.work_for[0].name }}
+  tr(ng-if='data.govern || data.govern')
+    td {{ 'informations.rule' | translate }}
+    td
+      a(ng-click='onClick(data.govern[0].id)') {{ data.govern[0].name }}
+  tr(ng-if='data.linked_to')
+    td {{ 'informations.affiliations' | translate }}
+    td
+      a(ng-click='onClick(data.linked_to[0].id)') {{ data.linked_to[0].name }}
+  tr(ng-if='data.category == "Personnage"')
+    td 
+    td 
+      a(href='http://univers.oxelie.com/dev/genealogy.php?id={{ data.id }}', target='_blank') {{ 'informations.genealogyLink' | translate }}

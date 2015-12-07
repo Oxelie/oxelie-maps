@@ -1,0 +1,5 @@
+table
+  tr(ng-if='data.is_in_place')
+    td {{ 'informations.situation' | translate }}
+    td
+      a(ng-click='onClick(data.is_in_place[0].id)') {{ data.is_in_place[0].name }}

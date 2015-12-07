@@ -1,0 +1,8 @@
+.DS_Store
+/config/*
+!/config/sample.yml
+/bower_components
+/cache
+/node_modules
+/public/*
+!/public/favicon.ico

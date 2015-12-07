@@ -1,0 +1,12 @@
+# Configuration file
+# To change the configuration, copy this file to config/<environment>.yml, where <environment> is either development or production.
+
+# The base URL where the app is deployed.
+# This is the address where socket.io will try to connect.
+protocol: http
+host: localhost
+port: 3000
+
+# If true (default), HTTP requests to fetch assets (JS, CSS, etc) will NOT be logged.
+# Set to false to enable asset logs.
+silenceAssetLogs: true

@@ -1,0 +1,11 @@
+table
+  tr(ng-if='data.city_s')
+    td {{ 'informations.city' | translate }}
+    td
+      a(ng-click='onClick(data.city_s.id)') {{ data.city_s.name }}
+  tr(ng-if='data.is_in_place_i')
+    td {{ 'informations.placesInside' | translate }}
+    td
+      span(ng-repeat='item in data.is_in_place_i')
+        a(ng-click='onClick(item.id)') {{ item.name }}
+        span(ng-if='!$last') , 

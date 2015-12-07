@@ -1,0 +1,11 @@
+.well.shadow-z-1(ng-show='data')
+  h1
+    | {{ data.name }}
+    small {{ data.category }}
+    small.wikiLink(ng-if='wiki')
+      a(href='http://wiki.oxelie.com/w/{{ wiki }}') Voir sur le wiki
+  i.mdi.mdi-checkbox-marked-circle(ng-if='data.state == 3', title='{{ "informations.state3" | translate }}')
+  i.mdi.mdi-close-circle(ng-if='data.state == 1', title='{{ "informations.state1" | translate }}')
+  i.mdi.mdi-alert(ng-if='data.state == 2 || data.state == 0', title='{{ "informations.state2" | translate }}')
+  p {{ data.description }}
+  div(ng-include='templateURL')

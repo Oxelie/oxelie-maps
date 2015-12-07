@@ -1,0 +1,22 @@
+table
+  tr(ng-if='data.country_s')
+    td {{ 'informations.country' | translate }}
+    td
+      a(ng-click='onClick(data.country_s.id)') {{ data.country_s.name }}
+      span(ng-if='data.country_s.isCapital')  ({{ 'informations.capital' | translate }})
+  tr(ng-if='data.region_s')
+    td {{ 'informations.region' | translate }}
+    td
+      a(ng-click='onClick(data.region_s.id)') {{ data.region_s.name }}
+  tr(ng-if='data.gentile')
+    td {{ 'informations.gentile' | translate }}
+    td {{ data.gentile }}
+  tr(ng-if='data.population')
+    td {{ 'informations.population' | translate }}
+    td {{ data.population }}
+  tr(ng-if='data.is_in_place_i')
+    td {{ 'informations.placesInside' | translate }}
+    td
+      span(ng-repeat='item in data.is_in_place_i')
+        a(ng-click='onClick(item.id)') {{ item.name }}
+        span(ng-if='!$last') , 

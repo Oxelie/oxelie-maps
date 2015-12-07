@@ -1,0 +1,33 @@
+table
+  tr(ng-if='data.type')
+    td {{ 'informations.type' | translate }}
+    td {{ data.type }}
+  tr(ng-if='data.city_s || data.building_s')
+    td {{ 'informations.city' | translate }}
+    td
+      a(ng-click='onClick(data.city_s.id)') {{ data.city_s.name }}
+      span(ng-if='data.building_s')
+      |  (
+      a(ng-click='onClick(data.building_s.id)') {{ data.building_s.name }}
+      | )
+  tr(ng-if='data.fondation')
+    td {{ 'informations.fondation' | translate }}
+    td {{ data.fondation }} 
+  tr(ng-if='data.membres')
+    td {{ 'informations.members' | translate }}
+    td {{ data.membres }} 
+  tr(ng-if='data.status')
+    td {{ 'informations.status' | translate }}
+    td {{ data.status }} 
+  tr(ng-if='data.govern_i')
+    td {{ 'informations.head' | translate }}
+    td
+      span(ng-repeat='item in data.govern_i')
+        a(ng-click='onClick(item.id)') {{ item.name }}
+        span(ng-if='!$last') , 
+  tr(ng-if='data.linked_to_i')
+    td {{ 'informations.members2' | translate }}
+    td 
+      span(ng-repeat='item in data.linked_to_i')
+        a(ng-click='onClick(item.id)') {{ item.name }}
+        span(ng-if='!$last') , 

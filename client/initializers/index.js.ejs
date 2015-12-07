@@ -1,0 +1,45 @@
+angular.module('oxelie.map.assets', [])
+
+  .constant('assetList', <%- JSON.stringify(assetList()) %>)
+
+  .factory('assets', function(assetList) {
+
+    function noExt(path) {
+      return path.replace(/\..*$/, '');
+    }
+
+    return {
+      assetPath: function(logicalPath) {
+
+        var matchingAssets = _.filter(assetList, function(asset) {
+          return asset.logicalPath === logicalPath || (noExt(logicalPath) === logicalPath && noExt(asset.logicalPath) === noExt(logicalPath));
+        });
+
+        if (matchingAssets.length >= 2) {
+          throw new Error('Multiple assets match logical path "' + logicalPath + '". Please specify an extension.');
+        } else if (!matchingAssets.length) {
+          throw new Error('No asset found with logical path "' + logicalPath + '".');
+        }
+
+        return '/assets/' + matchingAssets[0].digestPath;
+      },
+
+      findAssetsMatching: function(name) {
+        return _.reduce(assetList, function(memo, asset) {
+          if (asset.logicalPath.indexOf(name) === 0) {
+            memo.push(asset.logicalPath);
+          }
+
+          return memo;
+        }, []);
+      }
+    };
+  })
+
+  .filter('assetPath', function(assets) {
+    return function(input) {
+      return assets.assetPath(input);
+    };
+  })
+
+;

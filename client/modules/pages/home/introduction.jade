@@ -1,0 +1,28 @@
+#introduction-welcome.well(ng-show='introduction.step == 0')
+  i.mdi.mdi-map
+  h1 {{ 'introduction.title' | translate }}
+  a.btn.btn-primary.btn-material-blue-A400(ng-click='introduction.step = 1') {{ 'introduction.discoverPresentation' | translate }}
+  hr
+  a(ng-click='introduction.step = -1')  {{ 'introduction.close' | translate }}
+  br
+  a(href='http://oxelie.com/')  {{ 'introduction.backToSite' | translate }}
+#introduction-search.popover(ng-show='introduction.step == 1')
+  .popover-content
+    h4 {{ 'introduction.searchTitle' | translate }} 
+    p {{ 'introduction.searchText' | translate }}
+  i.mdi.mdi-chevron-right(ng-click='introduction.step = 2')
+#introduction-distance.popover(ng-show='introduction.step == 2')
+  .popover-content
+    h4 {{ 'introduction.distanceTitle' | translate }} 
+    p {{ 'introduction.distanceText' | translate }}
+  i.mdi.mdi-chevron-right(ng-click='introduction.step = 3')
+#introduction-highres.popover(ng-show='introduction.step == 3')
+  .popover-content
+    h4 {{ 'introduction.highresTitle' | translate }} 
+    p {{ 'introduction.highresText' | translate }}
+  i.mdi.mdi-chevron-right(ng-click='introduction.step = 4')
+#introduction-climate.popover(ng-show='introduction.step == 4')
+  .popover-content
+    h4 {{ 'introduction.climateTitle' | translate }} 
+    p {{ 'introduction.climateText' | translate }}
+  i.mdi.mdi-close-circle-outline(ng-click='introduction.step = -1')

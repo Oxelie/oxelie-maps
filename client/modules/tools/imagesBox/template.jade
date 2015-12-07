@@ -1,0 +1,12 @@
+images(ng-show='files.length > 0')
+  figure.shadow-z-1(data-placement='center', data-toggle='modal' data-target='#modal', ng-click='currentImage = 0')
+    img(ng-src='http://univers.oxelie.com/uploads/thumbnails/{{ files[0]}}')
+    span {{ files.length }} {{ 'images.photos' | translate }}
+#modal.modal
+  .modal-dialog
+    .modal-content
+      .modal-body
+        img(ng-src='http://univers.oxelie.com/uploads/{{ files[currentImage] }}')
+        .mdi.mdi-close-circle-outline(data-dismiss='modal')
+        .mdi.mdi-chevron-left(ng-click='previous()')
+        .mdi.mdi-chevron-right(ng-click='next()')

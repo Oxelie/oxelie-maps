@@ -1,0 +1,14 @@
+doctype html
+html(ng-app='oxelie.map', ng-strict-di=true, lang='en')
+  head
+    meta(charset='utf-8')
+    title Oxélie: Cartographie
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    meta(name='description' content='La carte interactive du jeu de rôle "Oxélie."')
+    meta(name='keywords' content='oxélie, carte, géographie, jeu de rôle, maps, kaligarande')
+    base(href='/')
+    != css('app')
+    != js('app')
+    link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')
+  body
+    .main(ui-view)

@@ -1,0 +1,30 @@
+table
+  tr(ng-if='data.forme_etat')
+    td {{ 'informations.governement' | translate }}
+    td {{ data.forme_etat }}
+  tr(ng-if='data.govern_i')
+    td {{ 'informations.headOfGovernement' | translate }}
+    td
+      a(ng-click='onClick(data.govern_i[0].id)') {{ data.govern_i[0].name }}
+  tr(ng-if='data.capital_of')
+    td {{ 'informations.capital' | translate }}
+    td 
+      a(ng-click='onClick(data.capital_of[0].id)') {{ data.capital_of[0].name }}
+  tr(ng-if='data.gentile')
+    td {{ 'informations.gentile' | translate }}
+    td {{ data.gentile }}
+  tr(ng-if='data.population')
+    td {{ 'informations.population' | translate }}
+    td {{ data.population }}
+  tr(ng-if='data.ravages')
+    td {{ 'informations.ravages' | translate }}
+    td {{ data.ravages }}
+  tr(ng-if='data.alignement')
+    td {{ 'informations.alignement' | translate }}
+    td {{ data.alignement }}
+  tr(ng-if='data.is_in_place_i')
+    td {{ 'informations.placesInside' | translate }}
+    td
+      span(ng-repeat='item in data.is_in_place_i')
+        a(ng-click='onClick(item.id)') {{ item.name }}
+        span(ng-if='!$last') , 
