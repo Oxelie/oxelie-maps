@@ -65,7 +65,7 @@ angular.module('oxelie.map.map', [ 'oxelie.map.assets' ])
 
 
     function fetchClimate(callback) {
-      $http.get('http://maps.oxelie.com/data/weather.json').success(function(data, status) {
+      $http.get('https://maps.oxelie.com/data/weather.json').success(function(data, status) {
         $scope.climateData = L.geoJson(data, {
           style: helpers.processClimate
         });

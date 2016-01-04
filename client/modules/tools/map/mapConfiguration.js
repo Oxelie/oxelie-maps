@@ -19,7 +19,7 @@ angular.module('oxelie.map')
       baselayers: {
         oxelie: {
           name: 'Oxélie',
-          url: 'http://tiles.oxelie.com/?zxy={z}/{x}/{y}',        
+          url: 'https://tiles.oxelie.com/?zxy={z}/{x}/{y}',        
           type: 'xyz',
           layerOptions: {
             detectRetina: false,

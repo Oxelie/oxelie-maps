@@ -81,7 +81,7 @@ angular.module('oxelie.map.home', [ ])
       if (canceler) canceler.resolve();
       canceler = $q.defer();
 
-      return $http.get('http://maps.oxelie.com/api/search.php', {timeout: canceler.promise, params: params}).then(function(res) {
+      return $http.get('https://maps.oxelie.com/api/search.php', {timeout: canceler.promise, params: params}).then(function(res) {
         return res.data;
       });
     };
@@ -90,7 +90,7 @@ angular.module('oxelie.map.home', [ ])
       $location.path('/'+id);
       var params = {id: id};
 
-      $http.get('http://maps.oxelie.com/api/getElement.php', {params: params}).then(function(res) {
+      $http.get('https://maps.oxelie.com/api/getElement.php', {params: params}).then(function(res) {
         res.data.zoom = $scope.zoom;
         $scope.item = res.data;
       });
